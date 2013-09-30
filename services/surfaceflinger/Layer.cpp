@@ -126,7 +126,13 @@ void Layer::onFirstRef()
 #warning "disabling triple buffering"
     mSurfaceFlingerConsumer->setDefaultMaxBufferCount(2);
 #else
+
+#ifdef TARGET_ENABLE_QTR_BUFFERING
+    mSurfaceFlingerConsumer->setDefaultMaxBufferCount(4);
+#else
     mSurfaceFlingerConsumer->setDefaultMaxBufferCount(3);
+#endif
+
 #endif
 
     const sp<const DisplayDevice> hw(mFlinger->getDefaultDisplayDevice());
