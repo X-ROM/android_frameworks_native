@@ -36,6 +36,7 @@ LOCAL_SHARED_LIBRARIES := \
 	libsync \
 	libui \
 	libutils \
+        libhardware \
 	liblog
 
 # Executed only on QCOM BSPs
