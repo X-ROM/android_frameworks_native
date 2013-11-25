@@ -78,10 +78,6 @@ public:
         return surface != NULL && surface->getIGraphicBufferProducer() != NULL;
     }
 
-    virtual int32_t getSessionId(){
-        return reinterpret_cast<int>(mGraphicBufferProducer.get());
-    }
-
 protected:
     virtual ~Surface();
 
