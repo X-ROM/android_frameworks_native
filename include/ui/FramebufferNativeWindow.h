@@ -29,7 +29,11 @@
 #include <ui/Rect.h>
 
 #define MIN_NUM_FRAME_BUFFERS  2
+#ifdef TARGET_ENABLE_QTR_BUFFERING
+#define MAX_NUM_FRAME_BUFFERS  4
+#else
 #define MAX_NUM_FRAME_BUFFERS  3
+#endif
 
 #ifdef SAMSUNG_HDMI_SUPPORT
 #include "SecHdmiClient.h"
